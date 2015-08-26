@@ -1,0 +1,124 @@
+body
+{
+	background-color:#000000;
+}
+.container
+{
+	width: 600px;
+	margin: 20px auto 0 auto;
+}
+.machine-main-container
+{
+	width: 500px;
+	display: inline-block;
+	float: left;
+}
+
+.machine-side
+{
+	background-color: #FFC0CB;
+	width: 100px;
+	float: left;
+	display: inline-block;
+	height: 492px;
+	margin-top: 20px;
+}
+
+.machine-top , .machine-center , .machine-bottom
+{
+	margin: 0 auto;;
+	width: 100%;
+}
+
+.machine-top
+{
+	margin-top:20px;
+	height: 125px;
+	background-color:green;
+}
+.machine-center
+{
+	background-color:blue;
+	height: 166.65px;
+	overflow: hidden;
+}
+.machine-bottom
+{
+	background-color:yellow;
+	height: 200px;
+	
+}
+
+
+
+.result
+{
+width:100%;
+}
+
+.slot-one-cont , .slot-two-cont , .slot-three-cont
+{
+  width: 33.3333%;
+  float:left;
+}
+
+ul.slot-one , ul.slot-two, ul.slot-three
+{
+	list-style: none;
+	height: 166.65px;
+	padding:0px;
+	margin:0px;
+}
+
+ul.slot-one > li,
+ul.slot-two > li,
+ul.slot-three > li
+{
+	height:166.65px;
+}
+
+/*--------------------------------------------------------------
+11.0 Media Queries
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 75em) {
+	/* width 1200px up */
+
+
+
+}
+
+
+@media only screen and (min-width: 62px) and (max-width: 75em) {
+	/* 992px and 1200px */
+	
+
+
+}
+
+
+@media screen and (max-width: 61.938em) {
+	/* width: 991px; */
+}
+
+
+@media screen and (max-width: 48em) {
+	/* width 768px */
+	
+
+}
+
+@media screen and (max-width: 528px)
+{
+
+}
+
+@media screen and (max-width: 30em)
+{
+
+}
+
+@media screen and (max-width: 310px)
+{
+
+}

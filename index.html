@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Title Here &#12484;</title>
+
+
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet">
+
+
+  </head>
+
+<body>
+
+<div class="container">
+		<div class="machine-main-container">
+			<div class="machine-top">
+			</div>
+			<div class="machine-center">
+				
+					<div class="slot-one-cont">
+						<ul class="slot-one">
+							<li><img src="images/result-a.jpg" class="result"></li>
+							<li><img src="images/result-b.jpg" class="result"></li>
+							<li><img src="images/result-c.jpg" class="result"></li>
+							<li><img src="images/result-d.jpg" class="result"></li>
+						</ul>
+					</div>
+					<div class="slot-two-cont">
+						<ul class="slot-two">
+							<li><img src="images/result-a.jpg" class="result"></li>
+							<li><img src="images/result-b.jpg" class="result"></li>
+							<li><img src="images/result-c.jpg" class="result"></li>
+							<li><img src="images/result-d.jpg" class="result"></li>
+						</ul>
+					</div>
+					<div class="slot-three-cont">
+						<ul class="slot-three">
+							<li><img src="images/result-a.jpg" class="result"></li>
+							<li><img src="images/result-b.jpg" class="result"></li>
+							<li><img src="images/result-c.jpg" class="result"></li>
+							<li><img src="images/result-d.jpg" class="result"></li>
+						</ul>
+					</div>
+			
+			</div>
+			<div class="machine-bottom">
+			</div>
+		</div>
+		
+		<div class="machine-side">
+		
+		</div>
+</div>
+
+  <!-- please don't include this jQuery in wordpress. This is intendent only in static -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+<script>
+startSpinning();
+
+function startSpinning()
+{
+
+
+	   setInterval(function(){
+		  $("ul.slot-one").animate({marginTop:-166.65},130,function(){
+			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
+		  })
+	   }, 0);
+
+
+	
+	setTimeout(function()
+	{
+
+	   setInterval(function(){
+		  $("ul.slot-two").animate({marginTop:-166.65},130,function(){
+			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
+		  })
+	   }, 0);
+
+	}, 500);
+	
+	setTimeout(function()
+	{
+
+	   setInterval(function(){
+		  $("ul.slot-three").animate({marginTop:-166.65},130,function(){
+			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
+		  })
+	   }, 0);
+
+	}, 1000);
+	
+	
+}
+</script>
+  
+</body>
+
+</html>
