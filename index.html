@@ -96,7 +96,8 @@ $('.lever-btn').on('click', function()
 	
 	resetSlots();
 	//GrandWin();
-	lose();
+	//lose();
+	major();
 
 	 $(this).animate({top: '+=450px'}, 500);
 	$(this).animate({top: '-=450px'}, 1000);
@@ -146,6 +147,7 @@ function spinner(whichSlot,durationPerResult,maxSpinTimes,randomResult)
 	
 	
 }
+
 function lose()
 {
 
@@ -174,7 +176,32 @@ spinner("ul.slot-one",0,3,arr[0]);
 
 }
 
+function major()
+{
 
+var arr = []
+while(arr.length < 3){
+  var randomnumber=Math.ceil(Math.random()*7)
+  var found=false;
+  for(var i=0;i<arr.length;i++){
+	if(arr[i]==randomnumber){found=true;break}
+  }
+  if(!found)arr[arr.length]=randomnumber;
+}
+
+
+spinner("ul.slot-one",0,3,arr[0]);
+	setTimeout(function()
+	{
+		spinner("ul.slot-two",100,4,arr[0]);
+	}, 800);
+	
+	setTimeout(function()
+	{
+
+		spinner("ul.slot-three",120,5,arr[0]);
+	}, 1200);
+}
 
 function GrandWin()
 {
@@ -206,30 +233,10 @@ function resetSlots()
   $('ul.slot-one , ul.slot-two , ul.slot-three').append('<li><img src="images/result-1.jpg" class="result"></li><li><img src="images/result-2.jpg" class="result"></li><li><img src="images/result-3.jpg" class="result"></li><li><img src="images/result-4.jpg" class="result"></li><li><img src="images/result-5.jpg" class="result"></li><li><img src="images/result-6.jpg" class="result"></li><li><img src="images/result-7.jpg" class="result"></li><li><img src="images/result-8.jpg" class="result"></li>')
   
 }
+
+
 	
-/*etTimeout(function()
-	{
 
-	   setInterval(function(){
-		  $("ul.slot-two").animate({marginTop:-166.65},randomSpeedTwo,function(){
-			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
-		  })
-	   }, 0);
-
-	}, 800);
-	
-	setTimeout(function()
-	{
-
-	   setInterval(function(){
-		  $("ul.slot-three").animate({marginTop:-166.65},randomSpeedThree,function(){
-			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
-		  })
-	   }, 0);
-
-	}, 1200);
-	*/
-	
 
 </script>
   
