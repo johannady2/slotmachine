@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Title Here &#12484;</title>
+    <title>Slot Machine</title>
 
 
   <!-- Custom styles for this template -->
@@ -26,26 +26,38 @@
 				
 					<div class="slot-one-cont">
 						<ul class="slot-one">
-							<li><img src="images/result-a.jpg" class="result"></li>
-							<li><img src="images/result-b.jpg" class="result"></li>
-							<li><img src="images/result-c.jpg" class="result"></li>
-							<li><img src="images/result-d.jpg" class="result"></li>
+							<li><img src="images/result-1.jpg" class="result"></li>
+							<li><img src="images/result-2.jpg" class="result"></li>
+							<li><img src="images/result-3.jpg" class="result"></li>
+							<li><img src="images/result-4.jpg" class="result"></li>
+							<li><img src="images/result-5.jpg" class="result"></li>
+							<li><img src="images/result-6.jpg" class="result"></li>
+							<li><img src="images/result-7.jpg" class="result"></li>
+							<li><img src="images/result-8.jpg" class="result"></li>
 						</ul>
 					</div>
 					<div class="slot-two-cont">
 						<ul class="slot-two">
-							<li><img src="images/result-a.jpg" class="result"></li>
-							<li><img src="images/result-b.jpg" class="result"></li>
-							<li><img src="images/result-c.jpg" class="result"></li>
-							<li><img src="images/result-d.jpg" class="result"></li>
+							<li><img src="images/result-1.jpg" class="result"></li>
+							<li><img src="images/result-2.jpg" class="result"></li>
+							<li><img src="images/result-3.jpg" class="result"></li>
+							<li><img src="images/result-4.jpg" class="result"></li>
+							<li><img src="images/result-5.jpg" class="result"></li>
+							<li><img src="images/result-6.jpg" class="result"></li>
+							<li><img src="images/result-7.jpg" class="result"></li>
+							<li><img src="images/result-8.jpg" class="result"></li>
 						</ul>
 					</div>
 					<div class="slot-three-cont">
 						<ul class="slot-three">
-							<li><img src="images/result-a.jpg" class="result"></li>
-							<li><img src="images/result-b.jpg" class="result"></li>
-							<li><img src="images/result-c.jpg" class="result"></li>
-							<li><img src="images/result-d.jpg" class="result"></li>
+							<li><img src="images/result-1.jpg" class="result"></li>
+							<li><img src="images/result-2.jpg" class="result"></li>
+							<li><img src="images/result-3.jpg" class="result"></li>
+							<li><img src="images/result-4.jpg" class="result"></li>
+							<li><img src="images/result-5.jpg" class="result"></li>
+							<li><img src="images/result-6.jpg" class="result"></li>
+							<li><img src="images/result-7.jpg" class="result"></li>
+							<li><img src="images/result-8.jpg" class="result"></li>
 						</ul>
 					</div>
 			
@@ -55,53 +67,170 @@
 		</div>
 		
 		<div class="machine-side">
-		
+			<button class="lever-btn">
+					<div class="lever-design">
+						<h4 class="lever-label">Play</h4>
+					</div>
+			</button>
+			<div class="lever-hole-design">
+			</div>
 		</div>
 </div>
 
-  <!-- please don't include this jQuery in wordpress. This is intendent only in static -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   
 
 <script>
-startSpinning();
+var spinnerSlotOneResult = 0;
+var spinnerSlotTwoResult = 0;
 
-function startSpinning()
+
+
+$('.lever-btn').on('click', function()
+{
+	spinnerSlotOneResult = 0;//reset
+	spinnerSlotTwoResult = 0;//reset
+	spinnerSlotThreeResult = 0;//reset
+
+	
+	resetSlots();
+	//GrandWin();
+	lose();
+
+	 $(this).animate({top: '+=450px'}, 500);
+	$(this).animate({top: '-=450px'}, 1000);
+});
+
+function spinner(whichSlot,durationPerResult,maxSpinTimes,randomResult)
 {
 
+	var randomSpeed = Math.floor(Math.random() * 50) + 100;
 
-	   setInterval(function(){
-		  $("ul.slot-one").animate({marginTop:-166.65},130,function(){
-			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
-		  })
-	   }, 0);
+	var currentResult = 1;
+	var Allowednumberofspins = Math.floor(Math.random() * maxSpinTimes) + 2;
+	var numberofspinscounter = 1;
+
+	 var myVar =  setInterval(function()
+   {
 
 
-	
-	setTimeout(function()
-	{
+	  currentResult++;
+		
+	  $(whichSlot).animate({marginTop:-166.65},randomSpeed,function()
+	  {
+		 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
+	  })
+	  
+	 
+	  if(currentResult%8 == 0)
+	  {
+		currentResult = 8;
+		numberofspinscounter++;
+		
+	  }
+	  else
+	  {
+		currentResult = currentResult%8;
+	  }
+	  
+			if(currentResult == randomResult && numberofspinscounter >= Allowednumberofspins)
+		  {
+			clearInterval(myVar);
+		  }
+		
 
-	   setInterval(function(){
-		  $("ul.slot-two").animate({marginTop:-166.65},130,function(){
-			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
-		  })
-	   }, 0);
-
-	}, 500);
-	
-	setTimeout(function()
-	{
-
-	   setInterval(function(){
-		  $("ul.slot-three").animate({marginTop:-166.65},130,function(){
-			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
-		  })
-	   }, 0);
-
-	}, 1000);
+		
+	  
+   }, durationPerResult);
 	
 	
 }
+function lose()
+{
+
+var arr = []
+while(arr.length < 3){
+  var randomnumber=Math.ceil(Math.random()*8)
+  var found=false;
+  for(var i=0;i<arr.length;i++){
+	if(arr[i]==randomnumber){found=true;break}
+  }
+  if(!found)arr[arr.length]=randomnumber;
+}
+
+
+spinner("ul.slot-one",0,3,arr[0]);
+	setTimeout(function()
+	{
+		spinner("ul.slot-two",100,4,arr[1]);
+	}, 800);
+	
+	setTimeout(function()
+	{
+
+		spinner("ul.slot-three",120,5,arr[2]);
+	}, 1200);
+
+}
+
+
+
+function GrandWin()
+{
+	//GrandWinSpinner("ul.slot-one",0,3);
+	spinner("ul.slot-one",0,3,8);
+	
+	
+	setTimeout(function()
+	{
+		//GrandWinSpinner("ul.slot-two",100,4);
+		spinner("ul.slot-two",100,4,8);
+	}, 800);
+	
+	setTimeout(function()
+	{
+
+		//GrandWinSpinner("ul.slot-three",120,7);
+		spinner("ul.slot-three",100,4,8);
+	}, 1200);
+	
+
+
+	
+}
+
+function resetSlots()
+{
+  $('ul.slot-one , ul.slot-two , ul.slot-three').empty();
+  $('ul.slot-one , ul.slot-two , ul.slot-three').append('<li><img src="images/result-1.jpg" class="result"></li><li><img src="images/result-2.jpg" class="result"></li><li><img src="images/result-3.jpg" class="result"></li><li><img src="images/result-4.jpg" class="result"></li><li><img src="images/result-5.jpg" class="result"></li><li><img src="images/result-6.jpg" class="result"></li><li><img src="images/result-7.jpg" class="result"></li><li><img src="images/result-8.jpg" class="result"></li>')
+  
+}
+	
+/*etTimeout(function()
+	{
+
+	   setInterval(function(){
+		  $("ul.slot-two").animate({marginTop:-166.65},randomSpeedTwo,function(){
+			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
+		  })
+	   }, 0);
+
+	}, 800);
+	
+	setTimeout(function()
+	{
+
+	   setInterval(function(){
+		  $("ul.slot-three").animate({marginTop:-166.65},randomSpeedThree,function(){
+			 $(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
+		  })
+	   }, 0);
+
+	}, 1200);
+	*/
+	
+
 </script>
   
 </body>
