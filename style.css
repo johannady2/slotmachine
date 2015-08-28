@@ -1,7 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+
 body
 {
-	background-color:#000000;
+	background-image:url('images/background.jpg');
+	background-repeat: repeat;
+	margin:0px;
+	padding:0px;
 }
+
+button:focus {outline:0;}
+
 .container
 {
 	width: 600px;
@@ -46,17 +54,17 @@ body
 {
 	margin-top:20px;
 	height: 125px;
-	background-color:green;
+	background-color:#0066D8;
 }
 .machine-center
 {
-	background-color:blue;
+	background-color:#ffffff;
 	height: 166.65px;
 	overflow: hidden;
 }
 .machine-bottom
 {
-	background-color:yellow;
+	background-color:#172CA1;
 	height: 200px;
 	
 }
@@ -119,10 +127,10 @@ ul.slot-three > li
 	margin-top: 0px;
 	position: absolute;
 	top: 33px;
-	left: 19px;
-	font-family: Arial;
+	left: 16px;
+	font-family: "Orbitron",sans-serif;
 	color: #FF9000;
-	font-size: 21px;
+	font-size: 19px;
 	text-transform: uppercase;
 }
 
@@ -145,6 +153,47 @@ ul.slot-three > li
 	
 
 }
+.clearfix
+{
+clear:both;
+}
+.row
+{
+	width:100%;
+}
+.col-half
+{
+	padding: 12px 4%;
+	min-height: 20px;
+	width: 42%;
+	float: left;
+	display: inline-block;
+}
+
+
+.inputfield , .inputfield2 /*inputfield remains width:100% in small screens while inputfield2 become 48%;*/
+{
+
+    padding: 0px;
+    width: 90%;
+    display: block;
+	font-size: 21px;
+	font-family: arial;
+	margin-top: 5px;
+}
+
+
+.inputfieldlabel , .inputfieldlabel2 /* inputfieldlabel will be displayed none when the screen is small*/
+{
+    color: rgb(255, 255, 255);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+
 /*--------------------------------------------------------------
 11.0 Media Queries
 --------------------------------------------------------------*/
@@ -157,7 +206,7 @@ ul.slot-three > li
 }
 
 
-@media only screen and (min-width: 62px) and (max-width: 75em) {
+@media only screen and (min-width: 62em) and (max-width: 75em) {
 	/* 992px and 1200px */
 	
 
@@ -166,7 +215,7 @@ ul.slot-three > li
 
 
 @media screen and (max-width: 61.938em) {
-	/* width: 991px; */
+	/* width: 991px;  */
 }
 
 
@@ -175,11 +224,274 @@ ul.slot-three > li
 	
 
 }
+@media screen and (max-width: 632px) {
+	/* width 632px */
+	
+	.container
+	{	
+		margin-top: 0px;
+		width: 100%;
+	}
+	.machine-main-container
+	{
+		width: 80%;
+	}
+	.machine-side
+	{
+		width: 20%;
+	}
+	
+	.machine-center
+	{
 
-@media screen and (max-width: 528px)
+		height: 163px;
+
+	}
+	
+	.machine-bottom
+	{
+		height: 204px;
+	}
+}
+
+@media screen and (max-width: 567px)
+{
+	.machine-center
+	{
+		height: 138px;
+	}
+	
+	.machine-side
+	{
+
+		height: 467px;
+
+	}
+	
+	.lever-hole-design
+	{
+		height: 407px;
+	}
+	
+	.inputfieldlabel , .inputfieldlabel2
+	{
+		color: #FFF;
+		font-family: "Orbitron",sans-serif;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	.inputfield
+	{
+
+    font-size: 18px;
+
+	}
+}
+
+
+@media screen and (max-width: 497px)
 {
 
+	.machine-center
+	{
+		height: 125px;
+	}
+	
+	.machine-side
+	{
+		height: 454px;
+	}
+	
+	
+	
+	.lever-design
+	{
+		width: 75px;
+		height: 75px;
+	}
+	
+	
+	.lever-label 
+	{
+		top: 27px;
+		left: 14px;
+		font-size: 15px;
+	}
 }
+
+@media screen and (max-width: 425px)
+{
+
+	.inputfieldlabel , .inputfieldlabel2
+	{
+		font-weight: normal;
+		font-size: 13px;
+	}
+	
+	.inputfield
+	{
+		font-size: 16px;
+		width: 100%;
+	}
+	.machine-center {
+		height: 107px;
+	}
+
+	.machine-bottom
+	{
+		height: 222px;
+	}
+}
+
+@media screen and (max-width:373px)
+{
+
+	.machine-top
+	{
+		height: 114px;
+	}
+	.machine-center
+	{
+		height: 99px;
+	}
+	
+	.machine-side
+	{
+		height: 435px;
+	}
+	
+	.lever-hole-design
+	{
+		width: 22px;
+		height: 391px;
+	}
+	
+	.lever-design
+	{
+		width: 60px;
+		height: 60px;
+	}
+	
+	.lever-label
+	{
+		top: 22px;
+		left: 11px;
+		font-size: 12px;
+	}
+
+	.col-half
+	{
+		padding: 2px 4%;
+		width: 92%;
+	}
+	
+	.inputfield2
+	{
+		width: 48%;
+		float:left;
+		padding: 0px;
+		display: inline-block;
+		font-size: 12px;
+		margin-top: 0px;
+	}
+
+	.inputfieldlabel2
+	{
+		width:48%; 
+		float:left;
+		color: rgb(255, 255, 255);
+		font-family: 'Orbitron', sans-serif;
+		text-transform: uppercase;
+		font-size:12px;
+	}
+	
+}
+@media screen and (max-width: 336px)
+{
+	.container
+	{
+		width: 192px;
+	}
+	.machine-main-container
+	{
+    width: 100%;
+	}
+	.machine-center
+	{
+    height: 76px;
+	}
+	
+	.machine-side
+	{
+		height: width;
+		width: 100%;
+		margin: 0px;
+		height: 37px;
+		border-radius: 0px;
+	}
+	
+	.lever-hole-design
+	{
+		display:none;
+	}
+	
+	.machine-top
+	{
+		margin-top: 0px;
+		height: 12px;
+		background: transparent linear-gradient(to bottom, #E2E2E2 5%, #FEFEFE 11%, #BABABA 44%, #FEFEFE 84%) repeat scroll 0% 0%;
+		border-bottom: 1px solid #f3f3f3;
+	}
+	.machine-center
+	{
+		height: 64px;
+	}
+	.machine-bottom
+	{
+		height: 143px;
+	}
+	
+	
+	.lever-btn
+	{
+		position:relative;
+		top:0px;
+		border: 0px none;
+		width: 100%;
+	}
+	
+	.lever-design
+	{
+		border-radius: 0px;
+		margin: 0px auto;
+		height: 36px;
+		width: 100%;
+
+	}
+	
+	.lever-label
+	{
+		margin: 0px;
+		position: relative;
+		padding-top: 6px;
+		top: 0px;
+		left: 0px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	.inputfieldlabel
+	{
+		display:none;
+	}
+	
+	.inputfield
+	{
+			font-family: "Orbitron",sans-serif;
+	}
+}
+
 
 @media screen and (max-width: 30em)
 {
