@@ -136,6 +136,7 @@ $('.lever-btn').on('click', function()
 		
 		if($('#RemainingTickets').val() == 0)
 		{
+			leverclickcounter = 0;//reset back to zero
 			$('#ReceiptAmount').removeAttr('disabled');
 		}
 		resetSlots();
